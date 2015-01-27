@@ -56,8 +56,7 @@ public class NewsBean implements Serializable {
 
         News cust = new News();
         cust.setTresc(getTresc());
-        cust.setData(new Date());
-        cust.setId(10);        
+        cust.setData(new Date());        
 
         newsBo.addNews(cust);
 

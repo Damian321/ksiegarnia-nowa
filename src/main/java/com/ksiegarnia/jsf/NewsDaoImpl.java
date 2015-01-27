@@ -18,8 +18,7 @@ public class NewsDaoImpl extends  HibernateDaoSupport implements NewsDao {
     @Override
     public void addNews(News news) {
         news.setData(new Date());
-        getHibernateTemplate().setCheckWriteOperations(false);
-   //     this.getSessionFactory().toString();
+        getHibernateTemplate().setCheckWriteOperations(false);   
         getHibernateTemplate().save(news);
     }
 
