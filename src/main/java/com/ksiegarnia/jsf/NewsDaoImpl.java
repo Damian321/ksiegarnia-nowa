@@ -10,6 +10,7 @@ import com.ksiegarnia.model.News;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import org.springframework.dao.InvalidDataAccessResourceUsageException;
 import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
 
 
@@ -19,7 +20,11 @@ public class NewsDaoImpl extends  HibernateDaoSupport implements NewsDao {
     public void addNews(News news) {
         news.setData(new Date());
         getHibernateTemplate().setCheckWriteOperations(false);   
-        getHibernateTemplate().save(news);
+        try{
+            getHibernateTemplate().save(news);
+        }catch(InvalidDataAccessResourceUsageException e){
+            System.out.println("kurwa");
+        }
     }
 
     @Override
