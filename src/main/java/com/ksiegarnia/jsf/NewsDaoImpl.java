@@ -10,7 +10,7 @@ import com.ksiegarnia.model.News;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
 
 
 public class NewsDaoImpl extends  HibernateDaoSupport implements NewsDao {
