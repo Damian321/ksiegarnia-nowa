@@ -77,12 +77,10 @@ public class UserController {
         } else if (wypozycz != null) {
             List<Ksiazka> doWypozyczenia = new ArrayList<Ksiazka>();
             doWypozyczenia = koszyk.getLista_ksiazek();
-            System.out.println(doWypozyczenia.toString());
 
             for (Ksiazka tmp : doWypozyczenia) {
-                System.out.println(tmp.toString());
                 wypozyczenieDAO.createWypozyczenie(tmp.getId(), koszyk.getUsername(), "czeka na odbiór");
-                System.out.println("DSDS");
+
             }
         }
 

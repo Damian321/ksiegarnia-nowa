@@ -29,7 +29,6 @@ public class NewsDAO {
     public void addNews(String tresc){       
         query = "INSERT INTO news(tresc,data) VALUES ('"+tresc+"',current_date)";
         
-        System.out.println(query);
         this.jdbcTemplate.execute(query);
     }
     

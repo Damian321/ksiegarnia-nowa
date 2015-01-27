@@ -49,7 +49,7 @@ public class WypozyczenieDAO {
     
     public void createWypozyczenie(String id_ksiazki, String username, String stan){
         query = "INSERT INTO wypozyczenia(id_ksiazki, username, stan) VALUES("+id_ksiazki+",'"+username+"','"+stan+"')";
-        System.out.println(query);
+   
         this.jdbcTemplate.execute(query);               
     }
     

@@ -27,7 +27,6 @@ public class NewsBean implements Serializable {
     }
 
     public void setNewsBo(NewsBo newsBo) {
-        System.out.println("SETTER: " + newsBo);
         this.newsBo = newsBo;        
     }
 
@@ -48,8 +47,7 @@ public class NewsBean implements Serializable {
     }
 
     //get all customer data from database
-    public List<News> getNewsList() {
-        System.out.println("KURWA MAC 1: ");
+    public List<News> getNewsList() {    
         return newsBo.findAllNews();
     }
 
@@ -59,10 +57,8 @@ public class NewsBean implements Serializable {
         News cust = new News();
         cust.setTresc(getTresc());
         cust.setData(new Date());
-        cust.setId(10);
-        
-        System.out.println("TUTAJ: " + cust);
-        System.out.println(newsBo.toString());
+        cust.setId(10);        
+
         newsBo.addNews(cust);
 
         clearForm();

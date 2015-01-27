@@ -18,20 +18,13 @@ public class NewsDaoImpl extends  HibernateDaoSupport implements NewsDao {
     @Override
     public void addNews(News news) {
         news.setData(new Date());
+        getHibernateTemplate().setCheckWriteOperations(false);
+   //     this.getSessionFactory().toString();
         getHibernateTemplate().save(news);
     }
 
     @Override
     public List<News> findAllNews() {
-        List<News> lista = new ArrayList<News>();
-        News news = new News();
-        news.setId(54);
-        news.setData(new Date());
-        news.setTresc("chuje muje");
-        lista.add(news);
-            System.out.println("KURWA MAC: " + lista);
-  //      return lista;
-        
         return (List<News>) getHibernateTemplate().find("from News");
     }
     

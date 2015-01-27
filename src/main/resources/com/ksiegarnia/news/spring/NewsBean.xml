@@ -12,6 +12,6 @@
    	<bean id="newsDao" 
          class="com.ksiegarnia.jsf.NewsDaoImpl" >
    		<property name="sessionFactory" ref="sessionFactory" />
-   	</bean>
- 
+   	</bean>       
+        
 </beans>
