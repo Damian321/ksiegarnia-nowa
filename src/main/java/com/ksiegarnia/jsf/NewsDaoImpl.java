@@ -23,7 +23,7 @@ public class NewsDaoImpl extends  HibernateDaoSupport implements NewsDao {
         try{
             getHibernateTemplate().save(news);
         }catch(InvalidDataAccessResourceUsageException e){
-            System.out.println("kurwa");
+            System.out.println("");
         }
     }
 

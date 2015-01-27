@@ -117,6 +117,8 @@
                         Panel administratora
                     </h3>
                     <br>
+                    <a href="../faces/index.xhtml">Wypożyczenia</a>
+                    <br><br>
                     <div class="tabbable" id="tabs-635136">
                         <ul class="nav nav-tabs">
                             <li class="active">
