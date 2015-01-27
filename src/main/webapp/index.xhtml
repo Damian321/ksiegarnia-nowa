@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      >
+    <h:head>
+    	<h:outputStylesheet library="css" name="table-style.css"  />
+    </h:head>
+ 
+    <h:body>
+ 
+    	<h1>JSF 2.0 + Spring + Hibernate Example ${hibernate.version}</h1>
+ 
+ 		<h:dataTable value="#{news.getNewsList()}" var="c"
+    			styleClass="order-table"
+    			headerClass="order-table-header"
+    			rowClasses="order-table-odd-row,order-table-even-row"
+    		>
+ 
+    		<h:column>
+    			<f:facet name="header">
+    				Customer ID
+    			</f:facet>
+    				#{c.chuj}
+    		</h:column>
+ 
+    		<h:column>
+    			<f:facet name="header">
+    				Name
+				</f:facet>
+    				#{c.tresc}
+    		</h:column>
+ 
+ 			<h:column>
+    			<f:facet name="header">
+    				Address
+				</f:facet>
+    				#{c.data}
+    		</h:column>
+ 
+    	</h:dataTable>
+ 
+ 		<h2>Add New Customer</h2>
+ 		<h:form>
+ 
+ 			<h:panelGrid columns="3">
+ 
+				Name : 
+				<h:inputText id="tresc" value="#{news.tresc}" 
+					size="20" required="true"
+					label="tresc" >
+				</h:inputText>
+ 
+				<h:message for="tresc" style="color:red" />
+ 
+				Address : 
+			
+			</h:panelGrid>
+ <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+			<h:commandButton value="Submit" action="#{news.addNews()}" />
+ 
+ 		</h:form>
+ 
+    </h:body>
+ 
+</html>

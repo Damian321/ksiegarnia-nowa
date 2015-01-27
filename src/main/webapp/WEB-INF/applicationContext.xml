@@ -12,7 +12,11 @@
     <!--bean id="propertyConfigurer"
           class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
           p:location="/WEB-INF/jdbc.properties" /-->
-
+	<import resource="classes/config/spring/beans/DataSource.xml"/>
+	<import resource="classes/config/spring/beans/HibernateSessionFactory.xml"/>
+ 
+	<!-- Beans Declaration -->
+	<import resource="classes/com/ksiegarnia/news/spring/NewsBean.xml"/>
 <bean id="dataSource" 
       class="org.springframework.jdbc.datasource.DriverManagerDataSource">
       <property name="driverClassName" value="org.apache.derby.jdbc.ClientDriver"/>

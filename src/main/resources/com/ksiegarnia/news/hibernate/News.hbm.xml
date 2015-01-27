@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.ksiegarnia.model.News" 
+        table="News" catalog="sa">
+ 
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="tresc" type="string">
+            <column name="TRESC" length="500" not-null="true" />
+        </property>
+        <property name="data" type="date">
+            <column name="DATA" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
